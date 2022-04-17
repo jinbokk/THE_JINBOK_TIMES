@@ -1,0 +1,92 @@
+.space_between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.inner_box {
+  position: absolute;
+  left: 100px;
+  top: 100px;
+}
+
+.box {
+  background-color: blue;
+  width: 100px;
+  height: 100px;
+  color: white;
+}
+
+.box_big {
+  background-color: red;
+  width: 300px;
+  height: 300px;
+  color: white;
+  position: relative;
+}
+
+.blank {
+  height: 200px;
+}
+
+.sub_main {
+  display: flex;
+}
+
+.mr_5 {
+  margin-right: 5px;
+}
+
+.mt_50 {
+  margin-top: 50px;
+}
+
+.mt_100 {
+  margin-top: 100px;
+}
+
+.q4_box_a {
+  display: flex;
+  position: relative;
+  background-color: red;
+}
+
+.q4_box_b {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+
+.q5_box {
+  background-color: green;
+  color: white;
+  height: 100px;
+  width: 100px;
+}
+
+.q5_box_big {
+  background-color: purple;
+  color: white;
+  height: 150px;
+  width: 400px;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+}
+
+
+.q5_box_L {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+}
+
+.q5_box_R {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
