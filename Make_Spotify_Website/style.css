@@ -1,0 +1,170 @@
+body {
+  margin: 0px;
+  color: white;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: black;
+}
+
+.nav_item {
+  color: #FFFFFF;
+  padding: 28px 17px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  color: #1ed760;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(41, 65, 171);
+  background-image: url(https://www-growth.scdn.co/static/home/bursts.svg);
+  background-size: 175%;
+  background-position: 46% 4%;
+  height: 968px;
+}
+
+.container {
+  max-width: 1170px;
+  width: 100%;
+  padding-top: 80px;
+  padding-bottom: 50px;
+}
+
+.head_line {
+  color: #1ed760;
+  font-weight: 900;
+  line-height: 166px;
+  font-size: 146px;
+}
+
+.head_line_first {
+  position: relative;
+  left: 110px;
+}
+
+.head_line_second {
+  position: relative;
+  left: 420px;
+}
+
+.sub_headline {
+  color: #1ed760;
+  font-size: 18x;
+  line-height: 24px;
+  padding: 40px;
+  text-align: center;
+}
+
+.button_area {
+  text-align: center;
+}
+
+.button_style {
+  padding: 14px 32px;
+  background-color: #1ed760;
+  border-radius: 500px;
+  font-size: inherit;
+  color: #2941ab;
+  font-weight: 700;
+  border: none;
+}
+
+.button_style:hover {
+  transform: scale(1.07);
+}
+
+footer {
+  display: flex;
+  justify-content: space-around;
+  background-color: black;
+}
+
+.first_box {
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.second_box {
+  width: 40%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.icon_box {
+  width: 54px;
+  height: 54px;
+  background-color: #222322;
+  border-radius: 50%;
+  margin-right: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+i {
+  font-size: 24px;
+  color: white;
+}
+
+.footer_menu {
+  color: #919496;
+  font-weight: 900;
+  margin-bottom: 20px;
+}
+
+.footer_box {
+  display: flex;
+  justify-content: space-between;
+  height: 346px;
+}
+
+.footer_menu_item {
+  padding-bottom: 15px;
+  padding-top: 3px;
+  font-size: 16px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer_bottom_first_line {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.footer_bottom_first_line_item {
+  color: #919496;
+  font-size: 12px;
+}
+
+.footer_bottom_second_line {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+  color: #919496;
+}
+
+.footer_botoom_second_line_item {
+  margin-right: 24px;
+  color: #919496;
+}
