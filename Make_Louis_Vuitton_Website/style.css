@@ -1,0 +1,76 @@
+nav {
+  padding: 2rem;
+  position:fixed;
+}
+
+.btn-outline-warning {
+  color: chocolate;
+  border-color: chocolate;
+}
+
+.btn-outline-warning:hover {
+  color: white;
+  border-color: chocolate;
+  background-color: chocolate;
+}
+
+footer {
+  background-color: black;
+  color: white;
+  font-size: 14px;
+}
+
+.first_line {
+  border-bottom: 1px solid #392d23;
+  color: white;
+}
+
+.second_line a {
+  color: white;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 48rem) {
+  .first_line {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 48rem) {
+  .second_line {
+    padding : 2rem;
+  }
+}
+
+.col {
+  padding-bottom: 1rem;
+}
+
+.third_line {
+  border-top: 1px solid #392d23;
+  color: white;
+  text-align: center;
+  font-size: 1.125rem;
+  font-weight: 300;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  align-items: center;
+  display: none;
+}
+
+@media screen and (max-width: 40rem) {
+  .third_line {
+    display: block;
+    border-top: 1px solid #392d23;
+  }
+}
+
+@media screen and (max-width: 40rem) {
+  .flag {
+    display: none;
+  }
+}
+
+.flag_image {
+  margin: 0 0.5rem
+}
