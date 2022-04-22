@@ -4,12 +4,23 @@ body {
 
 nav {
   background-color: white;
-  color: white;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 i {
   color: rgb(153, 153, 153);
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  text-decoration: none;
+  color: rgb(255, 173, 173);
+  transform: scale(1.2);
+  transition: transform .2s;
 }
 
 .nav_button {
@@ -22,6 +33,7 @@ i {
 }
 
 .mobile_nav {
+  background-color: white;
   display: none;
 }
 
@@ -35,17 +47,10 @@ i {
   }
 }
 
-.first_line {
-  padding-top: 2rem;
-}
-
 .second_line {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  margin-top: 1rem;
-  padding-top: 0.5rem;
-  border-top: 1px solid rgb(197, 197, 197);
 }
 
 .footer_icon {
@@ -53,6 +58,7 @@ i {
 }
 
 footer {
+  border-top: 1px solid rgb(246, 228, 228);
   font-size: 13px;
 }
 
@@ -70,16 +76,57 @@ footer {
 
 .main_button {
   background-color: white;
-  border: 2px solid rgb(244, 190, 190);
+  border: 1.5px solid rgb(244, 190, 190);
   color: rgb(244, 190, 190);
   font-weight: 500;
-  transition: transform .2s;
 }
 
 .main_button:hover {
   background-color: white;
   border: 2px solid rgb(244, 190, 190);
   color: rgb(244, 190, 190);
-  font-weight: 500;
+  font-weight: 600;
   transform: scale(1.1);
+  transition: transform .2s;
+}
+
+.btn:focus, .btn:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.card-img-top {
+  height: 30rem;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 48rem) {
+  .card-img-top {
+    height: 15rem;
+    object-fit: cover;
+  }
+}
+
+.my_carousel {
+  width: 100%;
+  height: 800px;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 48rem) {
+  .my_carousel {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+  }
+}
+
+@media screen and (max-width: 48rem) {
+  .main_button {
+    font-size: 12px;
+  }
+}
+
+.nav-link {
+  padding: 0;
 }
