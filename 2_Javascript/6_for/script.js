@@ -84,3 +84,16 @@ for (let q3_a = 1; q3_a <= 50; q3_a++) {
 
 
 // q4. 주어진 숫자가 소수이면 true 아니면 false를 출력하는 프로그램을 짜시오.
+
+let n = 11
+let isPrime = true
+
+if (n === 1) { // 1은 소수가 아님 
+  isPrime = false
+}
+for (let i = 2; i < n; i++) {
+  if (n % i == 0) {
+    isPrime = false
+  }
+}
+console.log(isPrime)
