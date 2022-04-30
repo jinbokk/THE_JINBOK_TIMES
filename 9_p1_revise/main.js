@@ -37,6 +37,11 @@ function checking() {
     return;
   }
 
+  if (history.includes(userValue)) {
+    resultArea.textContent = `"${userValue}" is already been entered`;
+    return;
+  }
+
   remainingChances--;
   chancesArea.textContent = `Remaining chances ${remainingChances}`
 
@@ -45,19 +50,16 @@ function checking() {
 
   if (userValue == randomNum) {
     resultArea.textContent = "CORRECT!"
+    checkBtn.disabled = true;
   } else if (userValue > randomNum) {
     resultArea.textContent = "DOWN!"
   } else if (userValue < randomNum) {
     resultArea.textContent = "UP!"
   }
 
-  if (history.includes(userValue)) {
-    resultArea.textContent = `"${userValue}" is already been entered`;
-    return;
-  }
-
   if (remainingChances < 1) {
     checkBtn.disabled = true;
+    resultArea.textContent = "Try again!";
   }
 }
 
