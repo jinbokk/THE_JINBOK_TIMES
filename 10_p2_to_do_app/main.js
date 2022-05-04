@@ -34,11 +34,15 @@ function render() { //taskList를 화면에 그려주는 함수
   ${taskList[i].taskContent}
 </div>
 <div>
-  <button>Check</button>
+  <button onclick="toggleComplete()">Check</button>
   <button>Delete</button>
 </div>
 </div>`
   }
 
   document.getElementById("task_board").innerHTML = resultHTML;
+}
+
+function toggleComplete() {
+  console.log("click event done!")
 }
