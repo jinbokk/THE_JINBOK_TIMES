@@ -5,35 +5,33 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>To Do App</title>
+  <title>To Do List</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
+  <div class="title_area text-center fw-bold fs-2">  <!-- TITLE AREA -->
+    To Do List
+  </div>
+
   <div class="container">
-    <h1>To Do List</h1>
-    <section class="input_area">
-      <input type="text" id="task_input" placeholder="Write down what you need to do here" />
-      <button id="add_button">+</button>
+    
+    <section> <!-- INPUT AREA -->
+      <input type="text" placeholder="What are you going to do today?" style="width:30vw"/>
+      <button>+</button>
     </section>
 
-    <section class="task_area">
-      <div class="task_tabs">
-        <div id="under_line"></div>
-        <div>
-          ALL
-        </div>
-        <div>
-          IN PROGRESS
-        </div>
-        <div>
-          DONE
-        </div>
-      </div>
-      <div id="task_board">
-      </div>
+    <section class="tabs_area"> <!-- TABS AREA -->
+      <span>ALL</span>
+      <span>To Do</span>
+      <span>Done</span>
+    </section>
+
+    <section> <!-- TASK LIST AREA -->
+      task list
     </section>
 
   </div>
@@ -42,6 +40,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
   </script>
+
 </body>
 
 </html>

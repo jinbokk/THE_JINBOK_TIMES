@@ -1,52 +1,33 @@
 body {
-  margin: 0 px;
-  background-image: url("./images/image-from-rawpixel-id-164706-original.jpg");
-  background-repeat: no-repeat;
+  margin: 0;
+  background-image: url(./images/image-from-rawpixel-id-436294-jpeg.jpg);
   background-size: cover;
+  background-repeat: no-repeat;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+.title_area {
+  background-color: rgb(203, 203, 203);
+  padding: 0;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  width: 88rem;
 }
 
 .container {
   background-color: white;
-  min-height: 100vh;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  height: 100vh;
+  padding: 2rem;
 }
 
-.task_area {
-  border: 1px solid lightgray;
-}
-
-.task_tabs {
+.tabs_area {
   display: flex;
-  border-bottom: 1px solid lightgray;
-  position: relative;
-}
-
-.task_tabs div {
-  /** task_tabs 하위의 div요소 모두에 적용 < 그동안 이렇게 못쓰고 있었음 */
-  padding: 1em;
-}
-
-/**:first-child, nth-child(2) 등으로 하위 자식요소 순서에 따라 서도 적용하는 방법이 있다! */
-
-#under_line {
-  /** #은 id를 불러오는 css문법이다 */
-  height: 4px;
-  background-color: brown;
-  position: absolute;
-  width: 60px;
-  left: 0px;
-  top: 53px;
-  padding: 0px;
-}
-
-.task {
-  display : flex;
   justify-content: space-between;
-  padding : 1em;
+  width: 20rem;
 }
 
-.task_done {
-  text-decoration: line-through;
-  background-color: lightgray;
+.tabs_area span {
+  padding: 1.5rem;
 }
