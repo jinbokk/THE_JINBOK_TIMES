@@ -3,32 +3,51 @@ body {
   background-image: url(./images/image-from-rawpixel-id-436294-jpeg.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  display:flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.title_area {
+/* .title_area {
   background-color: rgb(203, 203, 203);
-  margin-left: -2rem;
-  margin-right: -2rem;
-  margin-top: -2rem;
-  margin-bottom: 2rem;
-}
+} 
+have to search how to cover padding area */
 
 .container {
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
   height: 100vh;
-  padding: 2rem;
+  padding: 1.5rem;
+}
+
+.input_area {
+  width:40vw;
+  padding-left:0.7rem;
+  margin-top:1.5rem;
+  margin-bottom:1.5rem;
 }
 
 .tabs_area {
   display: flex;
-  justify-content: space-between;
-  width: 20rem;
+  justify-content: left;
+  border-bottom: solid 1px lightgray;
 }
 
 .tabs_area span {
   padding: 1.5rem;
+}
+
+.main_area {
+  border: solid 1px lightgray;
+}
+
+.task_list_area {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem;
+  border-bottom: solid 1px lightgray;
+}
+
+.pd {
+  padding : 1.5rem;
 }

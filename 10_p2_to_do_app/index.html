@@ -15,23 +15,31 @@
 
   <div class="container">
 
-    <div class="title_area text-center fw-bold fs-2">  <!-- TITLE AREA --> <!-- !!!!BREAKING LAYOUT IN MOBILE MODE!!!!!--> 
+    <!-- TITLE AREA -->
+    <div class="title_area text-center fw-bold fs-2">
       To Do List
     </div>
-    
-    <section> <!-- INPUT AREA -->
-      <input type="text" placeholder="What are you going to do today?" style="width:30vw"/>
-      <button>+</button>
+
+    <!-- INPUT AREA -->
+    <section>
+      <input id="task_input" type="text" placeholder="What are you going to do today?" class="input_area" />
+      <button id="add_button">+</button>
     </section>
 
-    <section class="tabs_area"> <!-- TABS AREA -->
-      <span>ALL</span>
-      <span>To Do</span>
-      <span>Done</span>
-    </section>
+    <!-- MAIN AREA-->
+    <section class="main_area">
 
-    <section> <!-- TASK LIST AREA -->
-      task list
+      <!-- TABS AREA -->
+      <div class="tabs_area">
+        <span>ALL</span>
+        <span>To Do</span>
+        <span>Done</span>
+      </div>
+
+      <!-- TASK LIST AREA -->
+      <div id="task_list">
+       <!-- TaskList render -->
+      </div>
     </section>
 
   </div>
