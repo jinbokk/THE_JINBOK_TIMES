@@ -10,9 +10,10 @@ body {
 
 .title_area {
   background-color: rgb(203, 203, 203);
-  padding: 0;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
-  width: 88rem;
+  margin-left: -2rem;
+  margin-right: -2rem;
+  margin-top: -2rem;
+  margin-bottom: 2rem;
 }
 
 .container {
@@ -30,8 +31,4 @@ body {
 
 .tabs_area span {
   padding: 1.5rem;
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> bb961eb0b875758e78096b3cfd216b25e92c032f
