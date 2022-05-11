@@ -21,10 +21,10 @@ have to search how to cover padding area */
 }
 
 .input_area {
-  width:40vw;
-  padding-left:0.7rem;
-  margin-top:1.5rem;
-  margin-bottom:1.5rem;
+  width: 40vw;
+  padding-left: 0.7rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .tabs_area {
@@ -35,6 +35,7 @@ have to search how to cover padding area */
 
 .tabs_area span {
   padding: 1.5rem;
+  cursor: pointer;
 }
 
 .main_area {

@@ -3,6 +3,16 @@ let addButton = document.getElementById("add_button");
 addButton.addEventListener("click", addTask);
 let taskList = [];
 let taskBar = document.getElementById("task_list");
+let tabs = document.querySelectorAll(".tabs_area span");
+let filterList = []
+let mode = "ALL"
+
+for (let i = 0; i < tabs.length; i++) {
+  tabs[i].addEventListener("click", function (event) {
+    filter(event)
+  });
+}
+console.log(tabs)
 
 function addTask() {
   let task = {
@@ -16,19 +26,24 @@ function addTask() {
 }
 
 function render() {
+  let status = [];
+  if (mode == "ALL") {
+    status = taskList
+  } else if (mode == "To do" || mode == "Done") {
+    status = filterList
+  }
 
   let resultHTML = ''
+  for (let i = 0; i < status.length; i++) {
 
-  for (i = 0; i < taskList.length; i++) {
-
-    if (taskList[i].isComplete == true) {
+    if (status[i].isComplete == true) {
       resultHTML +=
         `
     <div class="task_list_area">
-    <span class="task_done">${taskList[i].taskName}</span>
+    <span class="task_done">${status[i].taskName}</span>
     <span>
-      <button onclick="toggleComplete('${taskList[i].id}')">CHECK</button>
-      <button onclick="deleteTask('${taskList[i].id}')">DELETE</button>
+      <button onclick="toggleComplete('${status[i].id}')">CHECK</button>
+      <button onclick="deleteTask('${status[i].id}')">DELETE</button>
     </span>
   </div>
   `
@@ -36,16 +51,15 @@ function render() {
       resultHTML +=
         `
     <div class="task_list_area">
-    <span>${taskList[i].taskName}</span>
+    <span>${status[i].taskName}</span>
     <span>
-      <button onclick="toggleComplete('${taskList[i].id}')">CHECK</button>
-      <button onclick="deleteTask('${taskList[i].id}')">DELETE</button>
+      <button onclick="toggleComplete('${status[i].id}')">CHECK</button>
+      <button onclick="deleteTask('${status[i].id}')">DELETE</button>
     </span>
   </div>
   `
     }
   }
-
   document.getElementById("task_list").innerHTML = resultHTML;
 }
 
@@ -68,7 +82,34 @@ function deleteTask(id) {
   for (let i = 0; i < taskList.length; i++) {
     if (taskList[i].id == id) {
       taskList.splice(i, 1);
+      break;
     }
   }
+  console.log(taskList);
   render()
+}
+
+function filter(event) {
+
+  mode = event.target.id
+
+  if (mode == "ALL") {
+    render()
+  } else if (mode == "To do") {
+    for (let i = 0; i < taskList.length; i++) {
+      if (taskList[i].isComplete == false) {
+        filterList.push(taskList[i])
+      }
+      render()
+    }
+  } else if (mode == "Done") {
+    for (let i = 0; i < taskList.length; i++) {
+      if (taskList[i].isComplete == true) {
+        filterList.push(taskList[i])
+      }
+      render()
+    }
+  }
+
+  console.log(filterList)
 }
