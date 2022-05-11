@@ -28,7 +28,7 @@ function render() {
     <span class="task_done">${taskList[i].taskName}</span>
     <span>
       <button onclick="toggleComplete('${taskList[i].id}')">CHECK</button>
-      <button>DELETE</button>
+      <button onclick="deleteTask('${taskList[i].id}')">DELETE</button>
     </span>
   </div>
   `
@@ -39,7 +39,7 @@ function render() {
     <span>${taskList[i].taskName}</span>
     <span>
       <button onclick="toggleComplete('${taskList[i].id}')">CHECK</button>
-      <button>DELETE</button>
+      <button onclick="deleteTask('${taskList[i].id}')">DELETE</button>
     </span>
   </div>
   `
@@ -62,4 +62,13 @@ function toggleComplete(id) {
 
 function randomIDGenerator() {
   return (performance.now().toString(36) + Math.random().toString(36)).replace(/\./g, "");
+}
+
+function deleteTask(id) {
+  for (let i = 0; i < taskList.length; i++) {
+    if (taskList[i].id == id) {
+      taskList.splice(i, 1);
+    }
+  }
+  render()
 }
