@@ -1,6 +1,6 @@
 let taskInput = document.getElementById("task_input");
 let addButton = document.getElementById("add_button");
-addButton.addEventListener("click", addTask);
+addButton.addEventListener("click", addTask);   //동시에 ALL tab이 클릭되게 구현할 것
 let taskList = [];
 let taskBar = document.getElementById("task_list");
 let tabs = document.querySelectorAll(".tabs_area span");
@@ -29,7 +29,7 @@ function render() {
   let status = [];
   if (mode == "ALL") {
     status = taskList
-  } else if (mode == "To do" || mode == "Done") {
+  } else if (mode == "To Do" || mode == "Done") {
     status = filterList
   }
 
@@ -96,7 +96,7 @@ function filter(event) {
 
   if (mode == "ALL") {
     render()
-  } else if (mode == "To do") {
+  } else if (mode == "To Do") {
     for (let i = 0; i < taskList.length; i++) {
       if (taskList[i].isComplete == false) {
         filterList.push(taskList[i])
