@@ -92,6 +92,7 @@ function deleteTask(id) {
 function filter(event) {
 
   mode = event.target.id
+  filterList = []
 
   if (mode == "ALL") {
     render()
