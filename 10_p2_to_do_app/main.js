@@ -1,6 +1,12 @@
 let taskInput = document.getElementById("task_input");
 let addButton = document.getElementById("add_button");
-addButton.addEventListener("click", addTask);   //동시에 ALL tab이 클릭되게 구현할 것
+addButton.addEventListener("click", addTask); //동시에 ALL tab이 클릭되게 구현할 것!
+let inputBox = document.getElementById("task_input");
+inputBox.addEventListener("keyup", (e) => {
+  if (e.keyCode === 13) {
+    addTask()
+  }
+});
 let taskList = [];
 let taskBar = document.getElementById("task_list");
 let tabs = document.querySelectorAll(".tabs_area span");
