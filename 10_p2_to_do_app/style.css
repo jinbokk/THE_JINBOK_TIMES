@@ -53,3 +53,7 @@ have to search how to cover padding area */
   background-color: red;
   text-decoration: line-through;
 }
+
+input:focus::placeholder {
+  color:transparent;
+}

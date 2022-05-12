@@ -27,6 +27,7 @@ function addTask() {
     isComplete: false
   };
   taskList.push(task);
+  inputBox.value = ""
   console.log(taskList);
   render()
 }
