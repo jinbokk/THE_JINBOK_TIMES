@@ -55,5 +55,5 @@ have to search how to cover padding area */
 }
 
 input:focus::placeholder {
-  color:transparent;
+  color: transparent;
 }
