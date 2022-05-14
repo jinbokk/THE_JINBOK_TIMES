@@ -49,8 +49,8 @@ function render() {
     <div class="task_list_area">
     <span class="task_done">${status[i].taskName}</span>
     <span>
-      <button onclick="toggleComplete('${status[i].id}')">CHECK</button>
-      <button onclick="deleteTask('${status[i].id}')">DELETE</button>
+      <button class="button-38" onclick="toggleComplete('${status[i].id}')">CHECK</button>
+      <button class="button-38" onclick="deleteTask('${status[i].id}')">DELETE</button>
     </span>
   </div>
   `
@@ -60,8 +60,8 @@ function render() {
     <div class="task_list_area">
     <span>${status[i].taskName}</span>
     <span>
-      <button onclick="toggleComplete('${status[i].id}')">CHECK</button>
-      <button onclick="deleteTask('${status[i].id}')">DELETE</button>
+      <button class="button-38" onclick="toggleComplete('${status[i].id}')">CHECK</button>
+      <button class="button-38" onclick="deleteTask('${status[i].id}')">DELETE</button>
     </span>
   </div>
   `
