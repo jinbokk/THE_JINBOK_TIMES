@@ -9,7 +9,7 @@ inputBox.addEventListener("keyup", (e) => {
 });
 let taskList = [];
 let taskBar = document.getElementById("task_list");
-let tabs = document.querySelectorAll(".tabs_area span");
+let tabs = document.querySelectorAll(".tabs_area div");
 let filterList = []
 let mode = "ALL"
 let underLine = document.getElementById("tab_underline")
@@ -46,12 +46,12 @@ function render() {
     if (status[i].isComplete == true) {
       resultHTML +=
         `
-    <div class="task_list_area">
-    <span class="task_done">${status[i].taskName}</span>
-    <span>
+    <div class="task_list_area task_done">
+    <span>${status[i].taskName}</span>
+    <div class="button_area">
       <button class="button-38" onclick="toggleComplete('${status[i].id}')">CHECK</button>
-      <button class="button-38" onclick="deleteTask('${status[i].id}')">DELETE</button>
-    </span>
+      <button class="button-38_del" onclick="deleteTask('${status[i].id}')">DELETE</button>
+    </div>
   </div>
   `
     } else {
@@ -59,10 +59,10 @@ function render() {
         `
     <div class="task_list_area">
     <span>${status[i].taskName}</span>
-    <span>
+    <div class="button_area">
       <button class="button-38" onclick="toggleComplete('${status[i].id}')">CHECK</button>
-      <button class="button-38" onclick="deleteTask('${status[i].id}')">DELETE</button>
-    </span>
+      <button class="button-38_del" onclick="deleteTask('${status[i].id}')">DELETE</button>
+    </div>
   </div>
   `
     }
