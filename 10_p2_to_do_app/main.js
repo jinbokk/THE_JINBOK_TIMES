@@ -12,13 +12,13 @@ let taskBar = document.getElementById("task_list");
 let tabs = document.querySelectorAll(".tabs_area span");
 let filterList = []
 let mode = "ALL"
+let underLine = document.getElementById("tab_underline")
 
 for (let i = 0; i < tabs.length; i++) {
   tabs[i].addEventListener("click", function (event) {
     filter(event)
   });
 }
-console.log(tabs)
 
 function addTask() {
   let task = {
@@ -97,6 +97,14 @@ function deleteTask(id) {
 }
 
 function filter(event) {
+
+  if (event) {
+    selectedMenu = event.target.id;
+    underLine.style.width = event.target.offsetWidth + "px";
+    underLine.style.left = event.target.offsetLeft + "px";
+    underLine.style.top =
+      event.target.offsetTop + (event.target.offsetHeight - 4) + "px";
+  }
 
   mode = event.target.id
   filterList = []

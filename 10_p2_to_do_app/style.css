@@ -3,8 +3,6 @@ body {
   background-image: url(./images/image-from-rawpixel-id-436294-jpeg.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  display: flex;
-  flex-direction: column;
   align-items: center;
 }
 
@@ -16,7 +14,7 @@ have to search how to cover padding area */
 .container {
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
-  height: 100vh;
+  height: 100%;
   padding: 1.5rem;
 }
 
@@ -33,7 +31,7 @@ have to search how to cover padding area */
   border-bottom: solid 1px lightgray;
 }
 
-.tabs_area span {
+.tabs_area div {
   padding: 1.5rem;
   cursor: pointer;
 }
@@ -64,7 +62,7 @@ input:focus::placeholder {
   border-radius: .5rem;
   box-sizing: border-box;
   color: #111827;
-  font-family: "Inter var",ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-family: "Inter var", ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: .875rem;
   font-weight: 600;
   line-height: 1.25rem;
@@ -80,7 +78,7 @@ input:focus::placeholder {
 }
 
 .button-38:hover {
-  background-color: rgb(249,250,251);
+  background-color: rgb(249, 250, 251);
   transform: scale(1.1);
   transition: 0.3s;
 }
@@ -92,4 +90,15 @@ input:focus::placeholder {
 
 .button-38:focus-visible {
   box-shadow: none;
+}
+
+#tab_underline {
+  background-color: brown;
+  height: 4px;
+  position: absolute;
+  top: 205px;
+  left: 150px;
+  width: 0px;
+  transition: 0.5s;
+  padding: 0px;
 }
