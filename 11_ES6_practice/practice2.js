@@ -81,9 +81,21 @@ let names = [
 //   return splitName.some(eachName=>eachName.toLocaleLowerCase().includes("p"))
 // }))
 
+
+
+
 // every 문제
 // 모두의 전체 이름의 길이가 20자 이상인가?
 // 모두의 이름에 a 가 포함되어 있는가?
+
+// console.log(names.every((item)=>{return item.length >= 20}))
+// // 또는,
+// console.log(names.every(item=>item.length>=20))
+
+// console.log(names.every((item)=>{return item.includes("a")}))
+
+
+
 
 // find 문제
 // 전체 이름의 길이가 20자 이상인 사람을 찾으시오.
