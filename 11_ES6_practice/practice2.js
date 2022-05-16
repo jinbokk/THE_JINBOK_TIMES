@@ -101,6 +101,16 @@ let names = [
 // 전체 이름의 길이가 20자 이상인 사람을 찾으시오.
 // 미들네임이 포함되어있는 사람을 찾으시오.(예-Steven Paul Jobs)
 
+
+
+
+
 // findIndex 문제
 // 전체 이름의 길이가 20자 이상인 사람의 인덱스 번호를 찾으시오.
 // 미들네임이 포함되어있는 사람의 인덱스 번호를 찾으시오.
+
+console.log(names.findIndex((item)=>{return item.length >= 20}))
+// console.log(names.findIndex((item)=>{return item.split(' ' + ' ')})) // 이것도 되는지 모르겠네?
+
+// 답안
+console.log(names.findIndex(item=>item.split(' ').length>=3))
