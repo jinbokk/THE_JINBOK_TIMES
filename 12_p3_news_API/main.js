@@ -28,12 +28,12 @@ const render = () => {
   newsArticlesHTML = newsArticles.map((item) => {
     return `<div class="row py-4">
  <div class="col-lg-4">
-   <img class="news_img_size"
-     src=${item.media} />
+   <img class="news_img"
+     src=${item.media == null || item.media == "" ? "images\no-image.png" : item.media} />
  </div>
- <div class="col-lg-8">
-   <h2>${item.title}</h2>
-   <p>${
+ <div class="col-lg-8 position-relative">
+   <h2 class="pt-3 fw-bold">${item.title}</h2>
+   <p class="py-2">${
      item.summary == null || item.summary == ""
      ? "내용 없음"
      : item.summary.length < 200
@@ -41,7 +41,7 @@ const render = () => {
      : item.summary.length > 200
      ? item.summary.substring(0,200) + "..."
      : item.summary}</p>
-   <div>${item.clean_url} // ${item.published_date}</div>
+   <div>${item.clean_url == null || item.clean_url == "" ? "no source" : item.clean_url } // ${moment(item.published_date).fromNow()}</div>
  </div>
 </div>`;
   }).join('');

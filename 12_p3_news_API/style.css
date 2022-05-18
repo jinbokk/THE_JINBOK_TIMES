@@ -46,7 +46,7 @@ body {
   transition: 0.1s;
 }
 
-.news_img_size {
+.news_img {
   max-width: 100%;
   max-height: 250px;
   min-width: 100%;
@@ -56,4 +56,13 @@ body {
 
 .row {
   border-bottom: solid 2px rgb(190, 190, 190);
+}
+
+.row:hover {
+  transform: scale(1.015);
+  transition: 0.2s;
+}
+
+.row div {
+  cursor: pointer;
 }
