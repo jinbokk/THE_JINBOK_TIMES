@@ -64,6 +64,7 @@ const getNewsByTopic = async (event) => {
 }
 
 let searchButton = document.getElementById("search_button");
+let searchInput = document.getElementById("search_input");
 
 const getNewsByKeyword = async () => {
   let keyword = document.getElementById("search_input").value;
@@ -80,4 +81,9 @@ const getNewsByKeyword = async () => {
   render();
 }
 
-searchButton.addEventListener("click", getNewsByKeyword)
+searchButton.addEventListener("click", getNewsByKeyword);
+searchInput.addEventListener("keypress", (event) => {
+  if (event.keyCode === 13) {
+    getNewsByKeyword()
+  }
+});
