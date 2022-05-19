@@ -87,3 +87,7 @@ searchInput.addEventListener("keypress", (event) => {
     getNewsByKeyword()
   }
 });
+
+// let eachNews = document.querySelectorAll(".row")
+// console.log(eachNews)
+// 뉴스들의 div를 클릭하면, 해당 기사의 링크로 연결되며 새창이 팝업되는 기능을 구현하고 싶은데.. 아직은 방법을 모르겠다
