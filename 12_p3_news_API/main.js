@@ -9,16 +9,32 @@ menus.forEach((item) => {
 })
 
 const getNews = async () => {
-  let header = new Headers({
-    'x-api-key': 'UdwQsPDZDWoKpyITsqOqxQU9HzZqtsfadf3SA24oVpE'
-  });
-  let response = await fetch(url, {
-    headers: header
-  }); // ajax, http, fetch 등을 이용할 수도 있다. 강의에서는 fetch 추천.
-  let data = await response.json(); // data 또한 await을 해주어야 한다. 상위에서 await 해서 받아오는 response의 data를 가져오는 것이기 때문이다.
-  newsArticles = data.articles;
-  console.log(newsArticles);
-  render();
+  try {
+    let header = new Headers({
+      'x-api-key': 'UdwQsPDZDWoKpyITsqOqxQU9HzZqtsfadf3SA24oVpE'
+    });
+
+    let response = await fetch(url, {
+      headers: header
+    }); // ajax, http, fetch 등을 이용할 수도 있다. 강의에서는 fetch 추천.
+
+    let data = await response.json(); // data 또한 await을 해주어야 한다. 상위에서 await 해서 받아오는 response의 data를 가져오는 것이기 때문이다.
+
+    if (response.status == 200) {
+      newsArticles = data.articles;
+      render();
+    } else {
+      throw new Error
+    }
+  } catch (error) {
+    const renderError = () => {
+      let errorHTML = `<div class="alert alert-danger fw-bold text-center fs-2" role="alert">
+      Page Error !
+    </div>`
+      document.getElementById("news_articles").innerHTML = errorHTML;
+    }
+    renderError()
+  }
 }
 
 const getLatestNews = async () => {
