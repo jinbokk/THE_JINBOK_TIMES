@@ -1,5 +1,6 @@
 let newsArticles = [];
 let menus = document.querySelectorAll(".main_buttons button");
+let url;
 
 menus.forEach((item) => {
   item.addEventListener("click", (event) => {
@@ -7,8 +8,7 @@ menus.forEach((item) => {
   })
 })
 
-const getLatestNews = async () => {
-  let url = new URL(`https://api.newscatcherapi.com/v2/latest_headlines?countries=KR&topic=sport&page_size=10`);
+const getNews = async () => {
   let header = new Headers({
     'x-api-key': 'UdwQsPDZDWoKpyITsqOqxQU9HzZqtsfadf3SA24oVpE'
   });
@@ -19,6 +19,11 @@ const getLatestNews = async () => {
   newsArticles = data.articles;
   console.log(newsArticles);
   render();
+}
+
+const getLatestNews = async () => {
+  url = new URL(`https://api.newscatcherapi.com/v2/latest_headlines?countries=KR&topic=sport&page_size=10`);
+  getNews()
 };
 
 const render = () => {
@@ -50,17 +55,8 @@ getLatestNews();
 
 const getNewsByTopic = async (event) => {
   let topic = event.target.textContent.toLowerCase()
-  let url = new URL(`https://api.newscatcherapi.com/v2/latest_headlines?countries=KR&topic=${topic}&page_size=10`)
-  let header = new Headers({
-    'x-api-key': 'UdwQsPDZDWoKpyITsqOqxQU9HzZqtsfadf3SA24oVpE'
-  });
-  let response = await fetch(url, {
-    headers: header
-  });
-  let data = await response.json();
-  newsArticles = data.articles;
-  console.log(newsArticles);
-  render();
+  url = new URL(`https://api.newscatcherapi.com/v2/latest_headlines?countries=KR&topic=${topic}&page_size=10`)
+  getNews()
 }
 
 let searchButton = document.getElementById("search_button");
@@ -68,17 +64,8 @@ let searchInput = document.getElementById("search_input");
 
 const getNewsByKeyword = async () => {
   let keyword = document.getElementById("search_input").value;
-  let url = new URL(`https://api.newscatcherapi.com/v2/search?q=${keyword}&countries=KR&page_size=10`);
-  let header = new Headers({
-    'x-api-key': 'UdwQsPDZDWoKpyITsqOqxQU9HzZqtsfadf3SA24oVpE'
-  });
-  let response = await fetch(url, {
-    headers: header
-  });
-  let data = await response.json();
-  newsArticles = data.articles;
-  console.log(newsArticles);
-  render();
+  url = new URL(`https://api.newscatcherapi.com/v2/search?q=${keyword}&countries=KR&page_size=10`);
+  getNews()
 }
 
 searchButton.addEventListener("click", getNewsByKeyword);
