@@ -19,21 +19,24 @@ const getNews = async () => {
     }); // ajax, http, fetch 등을 이용할 수도 있다. 강의에서는 fetch 추천.
 
     let data = await response.json(); // data 또한 await을 해주어야 한다. 상위에서 await 해서 받아오는 response의 data를 가져오는 것이기 때문이다.
-
+    console.log(data)
     if (response.status == 200) {
+      if (data.status == "No matches for your search.") {
+        throw new Error("No Matches For Your Search!")
+      }
       newsArticles = data.articles;
       render();
     } else {
-      throw new Error
+      throw new Error("Page Error!")
     }
   } catch (error) {
-    const renderError = () => {
+    const renderError = (error) => {
       let errorHTML = `<div class="alert alert-danger fw-bold text-center fs-2" role="alert">
-      Page Error !
-    </div>`
+      ${error}
+      </div>`
       document.getElementById("news_articles").innerHTML = errorHTML;
     }
-    renderError()
+    renderError(error.message)
   }
 }
 
