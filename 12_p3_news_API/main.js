@@ -16,6 +16,8 @@ const getNews = async () => {
       'x-api-key': 'UdwQsPDZDWoKpyITsqOqxQU9HzZqtsfadf3SA24oVpE'
     });
 
+    url.searchParams.set('page', page);
+
     let response = await fetch(url, {
       headers: header
     }); // ajax, http, fetch 등을 이용할 수도 있다. 강의에서는 fetch 추천.
@@ -113,12 +115,16 @@ const pagination = () => {
   console.log(pageGroup, last, first)
 
   for (let i = first; i <= last; i++) {
-    paginationHTML += `<li class="page-item"><a class="page-link" href="#">${i}</a></li>`
+    paginationHTML += `<li class="page-item"><a class="page-link" href="#" onclick="moveToPage(${i})">${i}</a></li>`
   }
   document.querySelector(".pagination").innerHTML = paginationHTML;
 }
+const moveToPage = (pageNum) => {
+  page = pageNum;
+  getNews();
+}
 
-pagination()
+pagination();
 
 // let eachNews = document.querySelectorAll(".row")
 // console.log(eachNews)
