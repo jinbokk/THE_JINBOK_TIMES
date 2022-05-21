@@ -69,8 +69,8 @@ body {
 
 .search_area {
   position: absolute;
-  top: 55px;
-  right: 90px;
+  top: 80px;
+  right: 200px;
 }
 
 .search_area button {

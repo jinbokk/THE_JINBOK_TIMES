@@ -27,15 +27,16 @@ const getNews = async () => {
     if (response.status == 200) {
       console.log(data)
       newsArticles = data.articles;
-      // page = data.page;
-      // total_pages = data.total_pages;
+      page = data.page;
+      total_pages = data.total_pages;
       render();
+      pagination();
 
-      if (data.status == "No matches for your search.") {
-        throw new Error("No Matches For Your Search!")
+      if (data.total_hits == 0) {
+        throw new Error("No Matches For Your Search")
       }
     } else {
-      throw new Error("Page Error!")
+      throw new Error("Page Error")
     }
   } catch (error) {
     const renderError = (error) => {
@@ -44,7 +45,7 @@ const getNews = async () => {
       </div>`
       document.getElementById("news_articles").innerHTML = errorHTML;
     }
-    renderError(error.message)
+    renderError(error)
   }
 }
 
@@ -112,19 +113,16 @@ const pagination = () => {
   let last = pageGroup * 5;
   let first = last - 4;
 
-  console.log(pageGroup, last, first)
-
   for (let i = first; i <= last; i++) {
-    paginationHTML += `<li class="page-item"><a class="page-link" href="#" onclick="moveToPage(${i})">${i}</a></li>`
+    paginationHTML += `<li class="page-item ${page == i ? "active" : ""}"><a class="page-link" href="#" onclick="moveToPage(${i})">${i}</a></li>`
   }
   document.querySelector(".pagination").innerHTML = paginationHTML;
+  console.log(paginationHTML)
 }
 const moveToPage = (pageNum) => {
   page = pageNum;
   getNews();
 }
-
-pagination();
 
 // let eachNews = document.querySelectorAll(".row")
 // console.log(eachNews)
