@@ -116,8 +116,6 @@ const pagination = () => {
   }
   let first = last - 4 <= 0 ? 1 : last - 4;
 
-  console.log(pageGroup, last, first, page, totalPage)
-
   if (first >= 6) {
     paginationHTML = `<li class="page-item" onclick="moveToPage(1)">
                         <a class="page-link" href='#js-bottom'>&lt;&lt;</a>
