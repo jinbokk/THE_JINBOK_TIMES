@@ -20,7 +20,7 @@
       <nav class="left_nav">
         <input type="checkbox" id="menu_icon"/>
         <label for="menu_icon">
-          <i class="fa-solid fa-bars fa-2xl p-0"></i>
+          <i class="fa-solid fa-bars fa-2xl onTop"></i>
         </label>
         <div class="sidebar">
           <button>Sport</button>
@@ -38,17 +38,17 @@
           <button>Science</button>
           <button>Gaming</button>
           <button>Energy</button>
-      </div>
+        </div>
       </nav>
 
 
-      <div class="search_area">
-        <input type="text" placeholder="search" id="search_input">
-        <button id="search_button"><i class="fas fa-search"></i></button>
-      </div>
-
+      
       <div class="main_title">
-        <img src="images\main_title.jpg">
+        <img src="images\main_title.jpg" onclick="getLatestNews()">
+        <div class="search_area">
+          <input type="text" placeholder="search" id="search_input">
+          <button id="search_button"><i class="fas fa-search"></i></button>
+        </div>
       </div>
 
       <div class="main_buttons">
