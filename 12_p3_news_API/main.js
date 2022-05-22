@@ -2,7 +2,7 @@ let newsArticles = [];
 let menus = document.querySelectorAll(".main_buttons button");
 let url;
 let page = 1;
-let total_pages = 0;
+let totalPage = 1;
 
 menus.forEach((item) => {
   item.addEventListener("click", (event) => {
@@ -13,40 +13,40 @@ menus.forEach((item) => {
 const getNews = async () => {
   try {
     let header = new Headers({
-      'x-api-key': 'UdwQsPDZDWoKpyITsqOqxQU9HzZqtsfadf3SA24oVpE'
+      'x-api-key': 'RQ6XhL3VhIaLf6FdLExt_bmgi6LSAuvnH6wCM5afd8o'
     });
 
     url.searchParams.set('page', page);
 
     let response = await fetch(url, {
       headers: header
-    }); // ajax, http, fetch 등을 이용할 수도 있다. 강의에서는 fetch 추천.
+    });
 
-    let data = await response.json(); // data 또한 await을 해주어야 한다. 상위에서 await 해서 받아오는 response의 data를 가져오는 것이기 때문이다.
+    let data = await response.json();
 
     if (response.status == 200) {
-      console.log(data)
-      newsArticles = data.articles;
-      page = data.page;
-      total_pages = data.total_pages;
-      render();
-      pagination();
-
       if (data.total_hits == 0) {
         throw new Error("No Matches For Your Search")
       }
     } else {
       throw new Error("Page Error")
     }
+    console.log(data)
+    newsArticles = data.articles;
+    page = data.page;
+    totalPage = data.total_pages;
+    render();
+    pagination();
   } catch (error) {
-    const renderError = (error) => {
-      let errorHTML = `<div class="alert alert-danger fw-bold text-center fs-2" role="alert">
-      ${error}
-      </div>`
-      document.getElementById("news_articles").innerHTML = errorHTML;
-    }
-    renderError(error)
+    errorRender(error.message);
   }
+}
+
+const errorRender = (message) => {
+  let errorHTML = `<div class="alert alert-danger fw-bold text-center fs-2" role="alert">
+  ${message}
+  </div>`
+  document.getElementById("news_articles").innerHTML = errorHTML;
 }
 
 const getLatestNews = async () => {
@@ -111,19 +111,45 @@ const pagination = () => {
   let paginationHTML = ``
   let pageGroup = Math.ceil(page / 5);
   let last = pageGroup * 5;
-  let first = last - 4;
-
-  for (let i = first; i <= last; i++) {
-    paginationHTML += `<li class="page-item ${page == i ? "active" : ""}"><a class="page-link" href="#" onclick="moveToPage(${i})">${i}</a></li>`
+  if (last > totalPage) {
+    last = totalPage;
   }
+  let first = last - 4 <= 0 ? 1 : last - 4;
+
+  console.log(pageGroup, last, first, page, totalPage)
+
+  if (first >= 6) {
+    paginationHTML = `<li class="page-item" onclick="moveToPage(1)">
+                        <a class="page-link" href='#js-bottom'>&lt;&lt;</a>
+                      </li>
+                      <li class="page-item" onclick="moveToPage(${page - 1})">
+                        <a class="page-link" href='#js-bottom'>&lt;</a>
+                      </li>`;
+  }
+  for (let i = first; i <= last; i++) {
+    paginationHTML += `<li class="page-item ${i == page ? "active" : ""}" >
+                        <a class="page-link" href='#js-bottom' onclick="moveToPage(${i})" >${i}</a>
+                       </li>`;
+  }
+  if (last < totalPage) {
+    paginationHTML += `<li class="page-item" onclick="moveToPage(${page + 1})">
+                        <a  class="page-link" href='#js-program-detail-bottom'>&gt;</a>
+                       </li>
+                       <li class="page-item" onclick="moveToPage(${totalPage})">
+                        <a class="page-link" href='#js-bottom'>&gt;&gt;</a>
+                       </li>`;
+  }
+
   document.querySelector(".pagination").innerHTML = paginationHTML;
-  console.log(paginationHTML)
 }
+
 const moveToPage = (pageNum) => {
   page = pageNum;
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
   getNews();
 }
 
-// let eachNews = document.querySelectorAll(".row")
-// console.log(eachNews)
 // 뉴스들의 div를 클릭하면, 해당 기사의 링크로 연결되며 새창이 팝업되는 기능을 구현하고 싶은데.. 아직은 방법을 모르겠다
