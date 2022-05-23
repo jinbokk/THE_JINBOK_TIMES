@@ -94,9 +94,11 @@ const getNewsByTopic = async (event) => {
 
 let searchButton = document.getElementById("search_button");
 let searchInput = document.getElementById("search_input");
+let searchButtonMedia = document.getElementById("search_button_media");
+let searchInputMedia = document.getElementById("search_input_media");
 
 const getNewsByKeyword = async () => {
-  let keyword = document.getElementById("search_input").value;
+  let keyword = document.getElementById("search_input").value || document.getElementById("search_input_media").value;
   url = new URL(`https://api.newscatcherapi.com/v2/search?q=${keyword}&countries=KR&page_size=10`);
   getNews()
   searchInput.value = "";
@@ -104,6 +106,12 @@ const getNewsByKeyword = async () => {
 
 searchButton.addEventListener("click", getNewsByKeyword);
 searchInput.addEventListener("keypress", (event) => {
+  if (event.keyCode === 13) {
+    getNewsByKeyword()
+  }
+});
+searchButtonMedia.addEventListener("click", getNewsByKeyword);
+searchInputMedia.addEventListener("keypress", (event) => {
   if (event.keyCode === 13) {
     getNewsByKeyword()
   }
