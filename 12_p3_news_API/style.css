@@ -4,7 +4,7 @@ body {
 }
 
 .container {
-  min-width: 1320px;
+  min-width: 768px;
 }
 
 .main_title {
@@ -21,7 +21,7 @@ body {
 
 .main_buttons {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   flex-wrap: wrap;
   border-top: 1px solid rgb(189, 189, 189);
   border-bottom: 4px double black;
@@ -29,11 +29,21 @@ body {
   padding-bottom: 0.5em;
 }
 
+.wrapper {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
 .main_buttons button {
   border: none;
   border-radius: 0.5em;
   background-color: transparent;
-  padding: 0.5em;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  margin: 2px;
 }
 
 .main_buttons button:hover {
@@ -42,6 +52,13 @@ body {
   background-color: rgb(234, 234, 234);
   font-weight: 700;
   transition: 0.3s;
+}
+
+.main_buttons button:focus {
+  border: none;
+  border-radius: 0.5em;
+  background-color: rgb(234, 234, 234);
+  font-weight: 700;
 }
 
 .main_buttons button:active {
@@ -76,9 +93,24 @@ body {
 
 .search_area {
   position: absolute;
-  top: 72px;
+  top: 63px;
   right: 12px;
 }
+
+#search_input {
+  width: 200px;
+  margin-right: -40px;
+  padding: 8px;
+  padding-left: 20px;
+  background-color: rgb(234, 234, 234);
+  border-radius: 15px;
+  border:none;
+}
+
+/* #open_input_button:focus #search_input {
+  width: 500px;
+  transition: 0.5s;
+} */
 
 .search_area button {
   background-color: transparent;
@@ -98,15 +130,15 @@ body {
   }
 
   .main_title img {
-    position: relative;
-    left: 20px;
-    width: 80vw;
+    width: 400px;
     padding-bottom: 0;
   }
 
   .container {
+    min-width: 500px;
     padding-left: 2em;
     padding-right: 2em;
+    margin: 0;
   }
 
   .search_area {

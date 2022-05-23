@@ -33,6 +33,7 @@ const getNews = async () => {
     }
     console.log(data)
     newsArticles = data.articles;
+    console.log(newsArticles)
     page = data.page;
     totalPage = data.total_pages;
     render();
@@ -59,7 +60,7 @@ const render = () => {
   let newsArticlesHTML = "";
   newsArticlesHTML = newsArticles.map((item) => {
     return `
-    <div class="row py-4">
+    <div class="row py-4" onclick="moveToLink()">
       <div class="col-lg-4">
         <img class="news_img" src="${item.media || "./images/no-image.png"}" onerror="this.src='./images/no-image.png';"/>
       </div> 
@@ -98,6 +99,7 @@ const getNewsByKeyword = async () => {
   let keyword = document.getElementById("search_input").value;
   url = new URL(`https://api.newscatcherapi.com/v2/search?q=${keyword}&countries=KR&page_size=10`);
   getNews()
+  searchInput.value = "";
 }
 
 searchButton.addEventListener("click", getNewsByKeyword);
@@ -137,7 +139,6 @@ const pagination = () => {
                         <a class="page-link" href='#js-bottom'>&gt;&gt;</a>
                        </li>`;
   }
-
   document.querySelector(".pagination").innerHTML = paginationHTML;
 }
 
@@ -150,4 +151,11 @@ const moveToPage = (pageNum) => {
   getNews();
 }
 
-// 뉴스들의 div를 클릭하면, 해당 기사의 링크로 연결되며 새창이 팝업되는 기능을 구현하고 싶은데.. 아직은 방법을 모르겠다
+
+
+moveToLink = () => {
+  let link = newsArticles.map((item) => {
+    return item.link
+  })
+  console.log("클릭한 기사의 링크는", link)
+}
