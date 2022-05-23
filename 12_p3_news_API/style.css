@@ -131,6 +131,7 @@ body {
   .main_title img {
     width: 400px;
     padding-bottom: 0;
+    margin-bottom: 50px;
     position: relative;
     left: 20px;
   }
@@ -189,14 +190,14 @@ body {
   }
 
   .search_area_media {
-    display:block;
+    display:flex;
     justify-content: center;
-    position: absolute;
-    top:90px;
+    position:absolute;
+    top:95px;
   }
 
   #search_input_media {
-    width: 200px;
+    width: 300px;
     margin-right: -40px;
     padding: 8px;
     padding-left: 20px;
