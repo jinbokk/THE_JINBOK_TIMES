@@ -151,11 +151,9 @@ const moveToPage = (pageNum) => {
   getNews();
 }
 
-
-
 moveToLink = () => {
   let link = newsArticles.map((item) => {
     return item.link
   })
-  console.log("클릭한 기사의 링크는", link)
-}
+    console.log("클릭한 기사의 링크는", link)
+  }
