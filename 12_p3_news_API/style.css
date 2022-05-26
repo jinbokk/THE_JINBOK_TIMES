@@ -104,7 +104,7 @@ body {
   padding-left: 20px;
   background-color: rgb(234, 234, 234);
   border-radius: 15px;
-  border:none;
+  border: none;
 }
 
 .search_area button {
@@ -112,12 +112,13 @@ body {
   border: none;
 }
 
-.left_nav {
+
+.search_area_media {
   display: none;
 }
 
-.search_area_sidebar {
-  display:none;
+.left_nav {
+  display: none;
 }
 
 @media screen and (max-width: 768px) {
@@ -128,16 +129,20 @@ body {
     margin: 0;
   }
 
+  .main_title {
+    margin-top: 20px;
+    margin-bottom: 80px;
+  }
+
   .main_title img {
-    width: 400px;
+    width: 300px;
     padding-bottom: 0;
-    margin-bottom: 50px;
     position: relative;
     left: 20px;
   }
 
   .container {
-    min-width: 500px;
+    min-width: 300px;
     padding-left: 2em;
     padding-right: 2em;
     margin: 0;
@@ -154,7 +159,7 @@ body {
   .left_nav {
     display: block;
     position: absolute;
-    top: 45px;
+    top: 40px;
     left: 33px;
   }
 
@@ -170,10 +175,13 @@ body {
   .sidebar {
     width: 250px;
     height: 100%;
+    padding-top: 60px;
     background-color: white;
     position: fixed;
     z-index: 1;
     left: -250px;
+    top: 0;
+    right: 0;
     transition: 0.3s;
     display: flex;
     flex-direction: column;
@@ -185,27 +193,38 @@ body {
     border: none;
     background-color: white;
     text-align: center;
+    font-weight: 700;
+    border-bottom: 2px solid rgb(211, 211, 211);
+    height: 50px;
+    z-index: 2;
+  }
+
+  .sidebar button:last-child {
+    border: none;
+    background-color: white;
+    text-align: center;
+    font-weight: 700;
     height: 50px;
     z-index: 2;
   }
 
   .search_area_media {
-    display:flex;
+    display: flex;
     justify-content: center;
-    position:absolute;
-    top:95px;
+    position: absolute;
+    top: 85px;
   }
 
   #search_input_media {
-    width: 300px;
+    width: 80vw;
     margin-right: -40px;
     padding: 8px;
     padding-left: 20px;
     background-color: rgb(234, 234, 234);
     border-radius: 15px;
-    border:none;
+    border: none;
   }
-  
+
   .search_area_media button {
     background-color: transparent;
     border: none;
@@ -214,8 +233,4 @@ body {
   #menu_icon:checked+label+div {
     left: 0;
   }
-}
-
-.left_nav {
-  display: flex;
 }

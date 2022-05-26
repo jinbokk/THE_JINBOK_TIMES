@@ -1,10 +1,17 @@
 let newsArticles = [];
 let menus = document.querySelectorAll(".main_buttons button");
+let side_menus = document.querySelectorAll(".sidebar button");
 let url;
 let page = 1;
 let totalPage = 1;
 
 menus.forEach((item) => {
+  item.addEventListener("click", (event) => {
+    getNewsByTopic(event)
+  })
+})
+
+side_menus.forEach((item) => {
   item.addEventListener("click", (event) => {
     getNewsByTopic(event)
   })
@@ -163,5 +170,5 @@ moveToLink = () => {
   let link = newsArticles.map((item) => {
     return item.link
   })
-    console.log("클릭한 기사의 링크는", link)
-  }
+  console.log("클릭한 기사의 링크는", link)
+}
