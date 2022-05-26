@@ -131,6 +131,12 @@ body {
   box-shadow: none;
 }
 
+.page-link:hover {
+  color: black;
+  transform: scale(1.15);
+  transition: 0.5s;
+}
+
 .page-item.active .page-link {
   background-color: rgb(234, 234, 234);
   border-color: rgb(234, 234, 234);
@@ -194,6 +200,12 @@ body {
     vertical-align: middle;
     line-height: 5vh;
     width: 120px;
+    cursor: pointer;
+  }
+
+  .close_sidebar_topic:hover {
+    background-color: rgb(211, 211, 211);
+    transition: 0.5s;
   }
 
   .close_sidebar:checked .sidebar {
