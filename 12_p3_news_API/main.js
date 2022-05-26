@@ -67,7 +67,7 @@ const render = () => {
   let newsArticlesHTML = "";
   newsArticlesHTML = newsArticles.map((item) => {
     return `
-    <div class="row py-4" onclick="moveToLink()">
+    <div class="row py-4" onclick="location.href='${item.link}'">
       <div class="col-lg-4">
         <img class="news_img" src="${item.media || "./images/no-image.png"}" onerror="this.src='./images/no-image.png';"/>
       </div> 
@@ -156,11 +156,4 @@ const moveToPage = (pageNum) => {
     behavior: "smooth"
   });
   getNews();
-}
-
-moveToLink = () => {
-  let link = newsArticles.map((item) => {
-    return item.link
-  })
-  console.log("클릭한 기사의 링크는", link)
 }
