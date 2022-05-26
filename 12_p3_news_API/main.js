@@ -1,6 +1,6 @@
 let newsArticles = [];
 let menus = document.querySelectorAll(".main_buttons button");
-let side_menus = document.querySelectorAll(".sidebar button");
+let side_menus = document.querySelectorAll(".sidebar .close_sidebar_topic");
 let url;
 let page = 1;
 let totalPage = 1;
