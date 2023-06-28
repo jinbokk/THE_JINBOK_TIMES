@@ -20,7 +20,7 @@ side_menus.forEach((item) => {
 const getNews = async () => {
   try {
     let header = new Headers({
-      'x-api-key': 'ss_e9Kd-E6rbUyknh2h1m8K0itp49BUbXnhvuvZmrLo'
+      'x-api-key': 'tovpKG03t5GJUscvS1nlE6ECfvqbjGnMDGha3qFEg94'
     });
 
     url.searchParams.set('page', page);
