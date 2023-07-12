@@ -1,15 +1,14 @@
 # THE JINBOK TIMES PROJECT
 
+![portfolio_jinbokNews](https://github.com/jinbokk/THE_JINBOK_TIMES/assets/101123079/ee513a6e-f9e1-432e-87c7-f43e058fdce8)
+
 This is a website where users can retrieve news articles based on their desired categories. The website utilizes the Newscatcher API to fetch data. 
 
 ***Please note that since the API is free, there may be limitations on the number of requests, which could affect the usage of the website***
 
-![portfolio_jinbokNews](https://github.com/jinbokk/THE_JINBOK_TIMES/assets/101123079/ee513a6e-f9e1-432e-87c7-f43e058fdce8)
-
 ## Authors
 
 - [@jinbokk](https://www.github.com/jinbokk)
-
 
 ## Tech Stack
 
